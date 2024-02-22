@@ -3,9 +3,37 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <script defer src="./app.js"></script>
-    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles/main.css" />
+    <script defer src="./scripts/app.js"></script>
+    <title>Habbit App</title>
   </head>
-  <body></body>
+  <body>
+    <!--  -->
+    <div class="app">
+      <!-- Logo -->
+      <div class="panel">
+        <img src="./images/logo.svg" alt="Логотип Habbit App" />
+      </div>
+      <!-- Menu -->
+      <nav class="menu">
+        <!-- List -->
+        <div class="menu__list">
+          <button class="menu__item">
+            <img src="./images/Water.svg" alt="Вода" />
+          </button>
+        </div>
+        <!-- Add button -->
+        <button class="menu__add">
+          <img src="./images/Add.svg" alt="Добавить привычку" />
+        </button>
+      </nav>
+      <div class="content"></div>
+    </div>
+  </body>
 </html>

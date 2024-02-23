@@ -6,6 +6,11 @@ const HABBIT_KEY = "HABBIT_KEY";
 // page
 const page = {
   menu: document.querySelector(".menu__list"),
+  header: {
+    h1: document.querySelector(".h1"),
+    progressPrecent: document.querySelector(".progress__percent"),
+    progressCoverBar: document.querySelector(".progress__cover_bar"),
+  },
 };
 
 // utils
@@ -49,9 +54,23 @@ function rerenderMenu(activHabbit) {
   }
 }
 
+function rerenderHead(activHabbit) {
+  if (!activHabbit) {
+    return;
+  }
+  page.header.h1.innerText = activHabbit.name;
+  const progress =
+    activHabbit.days.length / activHabbit.target > 1
+      ? 100
+      : (activHabbit.days.length / activHabbit.target) * 100;
+  page.header.progressPrecent.innerText = progress.toFixed(0) + "%";
+  page.header.progressCoverBar.setAttribute("style", `width: ${progress}%`);
+}
+
 function rerender(activHabbitId) {
   const activHabbit = habbits.find((habbit) => habbit.id === activHabbitId);
   rerenderMenu(activHabbit);
+  rerenderHead(activHabbit);
 }
 // init
 (() => {
